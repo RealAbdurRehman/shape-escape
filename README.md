@@ -47,3 +47,7 @@ Shape Escape is a browser-based game where you control a square that must avoid 
 ### Gameplay
 
 ![Demo](https://cloud-lqdgmle88-hack-club-bot.vercel.app/0screenshot_from_2024-12-07_22-59-15.png)
+
+--- 
+
+### How many shapes can you escape?
