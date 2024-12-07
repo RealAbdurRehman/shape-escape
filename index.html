@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="You play as a square that must avoid other falling shapes to survive! How many shapes can you survive?"
+    />
+    <title>Shape Escape</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes disappear {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      #interface {
+        animation: disappear 4s linear 1 forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-500 m-0 overflow-hidden">
+    <div
+      id="interface"
+      class="btns fixed top-0 left-1/2 transform -translate-x-1/2 mt-8 text-center hidden"
+    >
+      <div class="w mb-4">
+        <kbd class="kbc-button w-[35px] h-[35px]">W</kbd>
+      </div>
+      <div class="row flex gap-4 mb-4 justify-center">
+        <kbd class="kbc-button w-[35px] h-[35px]">A</kbd>
+        <kbd class="kbc-button w-[35px] h-[35px]">D</kbd>
+      </div>
+      <p class="text-white mb-[40px]">To Move</p>
+    </div>
+    <h1 id="scoreWrapper" class="hidden fixed text-white text-3xl m-5">
+      Score: <span id="score">0</span>
+    </h1>
+    <h1
+      id="shapesEscapedWrapper"
+      class="hidden fixed text-white text-3xl m-5 mt-[75px]"
+    >
+      Shapes Escaped: <span id="shapesEscaped">0</span>
+    </h1>
+    <div
+      id="startGameEl"
+      class="w-[750px] h-[500px] bg-gray-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded"
+    >
+      <h1 class="text-white text-6xl text-center mt-20">Shape Escape</h1>
+      <button
+        id="startGameBtn"
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white p-2 rounded-md"
+      >
+        Start Game
+      </button>
+    </div>
+    <div
+      id="restartGameEl"
+      class="hidden w-[750px] h-[500px] bg-gray-700 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded"
+    >
+      <h1 class="text-white text-6xl text-center mt-20">Game Over</h1>
+      <button
+        id="restartGameBtn"
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white p-2 rounded-md"
+      >
+        Restart Game
+      </button>
+      <h1 class="text-white text-4xl text-center mt-[200px]">
+        Score: <span id="secondScore">0</span>
+      </h1>
+      <h1 class="text-white text-4xl text-center mt-[20px]">
+        Shapes Escaped: <span id="secondShapesEscaped">0</span>
+      </h1>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="./script.js"></script>
+  </body>
+</html>
